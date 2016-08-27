@@ -28,6 +28,10 @@ chmod +x $TMP2
 
 # FIXME: check for ignore_hole_birth tunable and change here
 
+if [ -a /sys/module/zfs/parameters/ignore_hole_birth ]; then
+	echo 0 > /sys/module/zfs/parameters/ignore_hole_birth;
+fi
+
 rm -f /dev/shm/pool[12]
 
 
