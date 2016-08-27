@@ -1,9 +1,8 @@
-zfs set recordsize=4k pool1
-truncate -s 1G pool1/large_file
-dd if=/dev/urandom of=/pool1/large_file bs=4k count=11264 seek=1152
+zfs set recordsize=4k pool1/fs1
+truncate -s 1G /pool1/fs1/file1
+dd if=/dev/urandom of=/pool1/fs1/file1 bs=4k count=11264 seek=1152
 ===
-truncate -s 4194304 /pool1/large_file
-dd if=/dev/urandom of=/pool1/large_file bs=4k count=152 seek=384 conv=notrunc
+truncate -s 4194304 /pool1/fs1/file1
+dd if=/dev/urandom of=/pool1/fs1/file1 bs=4k count=152 seek=384 conv=notrunc
 sleep 5
-dd if=/dev/urandom of=/pool1/large_file bs=4k count=10 seek=1408 conv=notrunc 
-
+dd if=/dev/urandom of=/pool1/fs1/file1 bs=4k count=10 seek=1408 conv=notrunc 

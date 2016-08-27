@@ -1,4 +1,4 @@
-dd if=/dev/urandom of=/pool1/large_file bs=128k count=1 seek=1 2> /dev/null
+dd if=/dev/urandom of=/pool1/fs1/file1 bs=128k count=1 seek=1 2> /dev/null
 ===
-dd if=/dev/urandom of=/pool1/large_file bs=128k count=1 2> /dev/null
-dd if=/dev/urandom of=/pool1/large_file bs=128k count=1 seek=3 2> /dev/null
+dd if=/dev/urandom of=/pool1/fs1/file1 bs=128k count=1 2> /dev/null
+dd if=/dev/urandom of=/pool1/fs1/file1 bs=128k count=1 seek=3 2> /dev/null

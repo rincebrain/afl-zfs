@@ -1,0 +1,8 @@
+zfs destroy pool1/fs1
+zfs create -o recordsize=512 pool1/fs1
+dd if=/dev/urandom of=/pool1/fs1/file1 bs=512 count=128k
+truncate --size=16k /pool1/fs1/file1
+sleep 15
+===
+dd if=/dev/urandom of=/pool1/fs1/file1 bs=512 count=1 seek=96k conv=notrunc
+sleep 15
