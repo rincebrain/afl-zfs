@@ -40,6 +40,6 @@ cat $TMP2
 echo zfs snapshot pool1/fs1@snap2
 
 # send snaps
-echo zfs send pool1/fs1@snap1 | zfs recv pool2/fs1
-echo zfs send -i pool1/fs1@snap{1,2} | zfs recv pool2/fs1
+echo 'zfs send pool1/fs1@snap1 | zfs recv pool2/fs1'
+echo 'zfs send -i pool1/fs1@snap{1,2} | zfs recv pool2/fs1'
 
